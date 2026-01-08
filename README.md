@@ -1,90 +1,89 @@
-Energy Consumption Forecasting with Time-Series Models
-Project Overview
+# Energy Consumption Forecasting with Time-Series Models
 
-This project focuses on forecasting household energy consumption using classical statistical models and deep learning approaches.
-The goal is to analyze how different time-series models perform on appliances with regular vs irregular usage patterns, using real-world smart meter data.
+## Project Overview
+This project focuses on forecasting household energy consumption using classical statistical models and deep learning approaches.  
+The goal is to analyze how different time-series models perform on appliances with **regular vs irregular usage patterns**, using real-world smart meter data.
 
-This project is based on my MSc thesis in Data-Driven Decision Making (University of Patras).
+This project is based on my MSc thesis in *Data-Driven Decision Making* (University of Patras).
 
-Business / Analytical Problem
+---
 
+## Business / Analytical Problem
 Accurate energy forecasting is essential for:
 
-Smart home optimization
+- Smart home optimization  
+- Energy cost reduction  
+- Demand-side energy management  
 
-Energy cost reduction
+Different household appliances exhibit very different consumption behaviors.  
+This project evaluates **which forecasting models are best suited for each usage type**.
 
-Demand-side energy management
+---
 
-Different household appliances exhibit very different consumption behaviors.
-This project evaluates which forecasting models are best suited for each usage type.
+## Dataset
 
-Dataset
+| Characteristic | Description |
+|--------------|------------|
+| Sampling | 1 min (normal), 50 ms (power spikes >100W) |
+| Period | September 2022 (30 days) |
+| Appliances | Refrigerator, Water Heater |
+| Variables | Active Power, Voltage, Current, Crest Factor, etc. |
 
-Real-world smart meter data collected from a residential household.
+**Data preprocessing included:**
+- Missing value handling  
+- Resampling & alignment  
+- Noise smoothing  
 
-Characteristic	Description
-Sampling	1 min (normal), 50 ms (power spikes >100W)
-Period	September 2022 (30 days)
-Appliances	Refrigerator, Water Heater
-Variables	Active Power, Voltage, Current, Crest Factor, etc.
+---
 
-Data preprocessing included:
+## Models Implemented
 
-Missing value handling
+| Category | Models |
+|--------|------|
+| Statistical | ARIMA, SARIMA, SARIMAX |
+| Decomposition | STL, MSTL + SARIMA |
+| Deep Learning | LSTM, CNN–LSTM |
 
-Resampling & alignment
+---
 
-Noise smoothing
+## Key Insights
 
-Models Implemented
-Category	Models
-Statistical	ARIMA, SARIMA, SARIMAX
-Decomposition	STL, MSTL + SARIMA
-Deep Learning	LSTM, CNN–LSTM
-Key Insights
-Refrigerator
+### Refrigerator
+- Strong seasonal and cyclical patterns  
+- SARIMA and SARIMAX delivered the most accurate forecasts  
+- Statistical models were sufficient for predictable behavior  
 
-Strong seasonal and cyclical patterns
+### Water Heater
+- Irregular, non-linear usage  
+- LSTM and SARIMAX achieved better performance  
+- External factors strongly influenced consumption  
 
-SARIMA and SARIMAX delivered the most accurate forecasts
+---
 
-Statistical models were sufficient for predictable behavior
-
-Water Heater
-
-Irregular, non-linear usage
-
-LSTM and SARIMAX achieved better performance
-
-External factors strongly influenced consumption
-
-Technologies
+## Technologies
 
 Python | pandas | numpy | scikit-learn | statsmodels | TensorFlow / Keras | Jupyter Notebook
 
-Why This Project Matters
+---
 
+## Why This Project Matters
 This project demonstrates my ability to:
 
-Clean and preprocess real-world time-series data
+- Clean and preprocess real-world time-series data  
+- Build and evaluate forecasting models  
+- Compare statistical and machine learning approaches  
+- Generate analytical insights for decision making  
 
-Build and evaluate forecasting models
+---
 
-Compare statistical and machine learning approaches
+## Future Work
+- Hybrid SARIMA–LSTM models  
+- Real-time forecasting pipelines  
+- Smart home energy optimization  
 
-Generate analytical insights for decision making
+---
 
-Future Work
-
-Hybrid SARIMA–LSTM models
-
-Real-time forecasting pipelines
-
-Smart home energy optimization
-
-Author
-
-Christina Marinopoulou
-Junior Data Analyst / BI & Forecasting
+## Author
+**Christina Marinopoulou**  
+Junior Data Analyst / BI & Forecasting  
 MSc in Data-Driven Decision Making
